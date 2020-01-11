@@ -1,1 +1,3 @@
-export * from './Intro';
+import Intro from './Intro';
+
+export default Intro;

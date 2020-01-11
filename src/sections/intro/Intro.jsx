@@ -1,40 +1,47 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Paper, Container } from '@material-ui/core';
-
+import { Box, Container } from '@material-ui/core';
+import { styled } from '@material-ui/core/styles';
 import BackgroundImage from 'gatsby-background-image';
 
-const styles = {
-  paperContainer: {
-    backgroundPosition: `center`,
-    backgroundRepeat: `no-repeat`,
-    backgroundSize: `cover`,
-    height: `100vh`
-  },
-  infoContainer: {
-    position: `relative`,
-    top: `20%`,
-    width: `50%`,
-    textAlign: `centre`
-  },
-  title: {
-    fontSize: `3rem`,
-    fontWeight: `700`,
-    color: `white`,
-    textAlign: `center`,
-    borderBottom: `1px solid white`,
-    paddingBottm: `1rem`
-  },
-  subTitle: {
-    fontSize: `2rem`,
-    color: `white`,
-    textAlign: `center`
-  }
-};
+const BgContainer = styled(BackgroundImage)({
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  height: '100vh'
+});
 
-export const Intro = () => {
-  const data = useStaticQuery(graphql`
+const InfoContainer = styled(Container)({
+  position: 'relative',
+  top: '5%',
+  width: '50%',
+  textAlign: 'center'
+});
+
+const Title = styled(Box)({
+  fontSize: '3rem',
+  fontWeight: '700',
+  color: 'white',
+  textAlign: 'center',
+  borderBottom: '1px solid white',
+  paddingBottm: '1rem'
+});
+
+const SubTitle = styled(Box)({
+  fontSize: '2rem',
+  color: 'white',
+  textAlign: 'center'
+});
+
+const Intro = () => {
+  const { site, bgImage } = useStaticQuery(graphql`
     query {
+      site {
+        siteMetadata {
+          title
+          profession
+        }
+      }
       bgImage: file(relativePath: { eq: "batman.jpg" }) {
         childImageSharp {
           fluid(quality: 90) {
@@ -46,14 +53,13 @@ export const Intro = () => {
   `);
 
   return (
-    <BackgroundImage
-      fluid={data.bgImage.childImageSharp.fluid}
-      style={styles.paperContainer}
-    >
-      <Container style={styles.infoContainer}>
-        <h1 style={styles.title}>Sanjiv Krishnasamy</h1>
-        <p style={styles.subTitle}>Frontend Developer</p>
-      </Container>
-    </BackgroundImage>
+    <BgContainer fluid={bgImage.childImageSharp.fluid}>
+      <InfoContainer>
+        <Title component="h1">{site.siteMetadata.title}</Title>
+        <SubTitle component="p">{site.siteMetadata.profession}</SubTitle>
+      </InfoContainer>
+    </BgContainer>
   );
 };
+
+export default Intro;
