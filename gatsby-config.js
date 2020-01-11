@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Sanjiv Krishnasamy`,
+    profession: `Frontend Developer`,
     description: `Personal profile`,
     author: `@sanjiv_krishnasamy`
   },
@@ -26,6 +27,12 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/letter-s.jpg` // This path is relative to the root of the site.
+      }
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
