@@ -1,16 +1,19 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import { Paper, Container } from '@material-ui/core';
-import Image from '../../images/batman.jpg';
+
+import BackgroundImage from 'gatsby-background-image';
 
 const styles = {
   paperContainer: {
-    background: `url(${Image}) no-repeat center center fixed`,
+    backgroundPosition: `center`,
+    backgroundRepeat: `no-repeat`,
     backgroundSize: `cover`,
     height: `100vh`
   },
   infoContainer: {
     position: `relative`,
-    top: `30%`,
+    top: `20%`,
     width: `50%`,
     textAlign: `centre`
   },
@@ -29,11 +32,28 @@ const styles = {
   }
 };
 
-export const Intro = () => (
-  <Paper style={styles.paperContainer}>
-    <Container style={styles.infoContainer}>
-      <h1 style={styles.title}>Sanjiv Krishnasamy</h1>
-      <p style={styles.subTitle}>Frontend Developer</p>
-    </Container>
-  </Paper>
-);
+export const Intro = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      bgImage: file(relativePath: { eq: "batman.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
+
+  return (
+    <BackgroundImage
+      fluid={data.bgImage.childImageSharp.fluid}
+      style={styles.paperContainer}
+    >
+      <Container style={styles.infoContainer}>
+        <h1 style={styles.title}>Sanjiv Krishnasamy</h1>
+        <p style={styles.subTitle}>Frontend Developer</p>
+      </Container>
+    </BackgroundImage>
+  );
+};
