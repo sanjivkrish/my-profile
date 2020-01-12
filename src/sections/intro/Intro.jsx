@@ -24,7 +24,7 @@ const Title = styled(Box)({
   color: 'white',
   textAlign: 'center',
   borderBottom: '1px solid white',
-  paddingBottm: '1rem'
+  paddingBottom: '1rem'
 });
 
 const SubTitle = styled(Box)({
@@ -38,7 +38,7 @@ const Intro = () => {
     query {
       site {
         siteMetadata {
-          title
+          fullName
           profession
         }
       }
@@ -55,7 +55,7 @@ const Intro = () => {
   return (
     <BgContainer fluid={bgImage.childImageSharp.fluid}>
       <InfoContainer>
-        <Title component="h1">{site.siteMetadata.title}</Title>
+        <Title component="h1">{site.siteMetadata.fullName}</Title>
         <SubTitle component="p">{site.siteMetadata.profession}</SubTitle>
       </InfoContainer>
     </BgContainer>

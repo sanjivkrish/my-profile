@@ -1,9 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Sanjiv Krishnasamy`,
-    profession: `Frontend Developer`,
-    description: `Personal profile`,
-    author: `@sanjiv_krishnasamy`
+    fullName: 'Sanjiv Krishnasamy',
+    profession: 'Frontend Developer',
+    birthDate: '1994-05-23',
+    currentLocation: 'Berlin, Germany',
+    about: `Well-qualified Full Stack Developer familiar with a wide range of programming utilities and languages. Collaborative team player with excellent
+technical abilities offering 3+ years of related experience. Background in developing web and mobile based user-friendly products.`
   },
   plugins: [
     `gatsby-theme-material-ui`,
