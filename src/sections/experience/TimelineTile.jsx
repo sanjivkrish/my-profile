@@ -1,15 +1,13 @@
 import React from 'react';
-import Box from '@material-ui/core/Box';
 import { styled } from '@material-ui/core/styles';
+import { Grid, Box, Link } from '@material-ui/core';
 
-const Wrapper = styled(Box)({
-  display: 'flex',
-  flexDirection: 'row',
-  padding: '2rem 0'
+const MiniFontBox = styled(Box)({
+  fontSize: '0.75rem'
 });
 
-const Container = styled(Box)({
-  width: '40%'
+const PositionBox = styled(Box)({
+  marginBottom: '1rem'
 });
 
 const TimelineTile = ({
@@ -21,20 +19,22 @@ const TimelineTile = ({
   details,
   link
 }) => (
-  <Wrapper>
-    <Container>
+  <Grid container spacing={5}>
+    <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
       <Box component="h4">{where}</Box>
-      <Box>
+      <MiniFontBox>
         {from} - {to}
-      </Box>
-      <Box>{location}</Box>
-    </Container>
-    <Container>
-      <Box component="strong">{position}</Box>
+      </MiniFontBox>
+      <MiniFontBox>{location}</MiniFontBox>
+    </Grid>
+    <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
+      <PositionBox>{position}</PositionBox>
       <Box>{details}</Box>
-      <Box>{link}</Box>
-    </Container>
-  </Wrapper>
+      <Link href={link} target="_blank">
+        {link}
+      </Link>
+    </Grid>
+  </Grid>
 );
 
 export default TimelineTile;

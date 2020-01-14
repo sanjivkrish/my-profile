@@ -1,39 +1,25 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Box from '@material-ui/core/Box';
+import { Grid, Box, Container } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
 import Img from 'gatsby-image';
 import moment from 'moment';
 
-const Wrapper = styled(Box)({
-  padding: '1rem 15rem'
-});
-
 const SectionTitle = styled(Box)({
   fontSize: '2.5rem',
   textAlign: 'center',
-  color: '#22A39F'
+  color: '#22A39F',
+  paddingTop: '2rem'
 });
-
-const SectionContent = styled(Box)({
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'center'
-});
-
-const SubSection = styled(Box)({
-  width: '30%',
-  padding: '1rem'
-});
-
-const SectionSubTitle = styled(Box)({});
 
 const SectionSubContent = styled(Box)({
   lineHeight: '1.5rem'
 });
 
 const DisplayPicture = styled(Img)({
-  borderRadius: '10rem'
+  borderRadius: '15rem',
+  height: '10rem',
+  width: '10rem'
 });
 
 const Profile = () => {
@@ -63,12 +49,12 @@ const Profile = () => {
   );
 
   return (
-    <Wrapper component="div">
+    <Container fixed>
       <SectionTitle component="h2">Profile</SectionTitle>
       <Box component="hr" />
-      <SectionContent>
-        <SubSection>
-          <SectionSubTitle component="h3">Details</SectionSubTitle>
+      <Grid container direction="row" justify="space-between" spacing={5}>
+        <Grid item xs={12} sm={3}>
+          <Box component="h3">Details</Box>
           <SectionSubContent component="div">
             <Box component="b">Full Name:</Box>
             <Box>{site.siteMetadata.fullName}</Box>
@@ -77,18 +63,18 @@ const Profile = () => {
             <Box component="b">Current Location:</Box>
             <Box>{site.siteMetadata.currentLocation}</Box>
           </SectionSubContent>
-        </SubSection>
-        <SubSection>
+        </Grid>
+        <Grid item xs={12} sm={3}>
           <DisplayPicture fluid={displayPic.childImageSharp.fluid} />
-        </SubSection>
-        <SubSection>
-          <SectionSubTitle component="h3">About</SectionSubTitle>
+        </Grid>
+        <Grid item xs={12} sm={3}>
+          <Box component="h3">About</Box>
           <SectionSubContent component="p">
             {site.siteMetadata.about}
           </SectionSubContent>
-        </SubSection>
-      </SectionContent>
-    </Wrapper>
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
 

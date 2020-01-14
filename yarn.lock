@@ -11787,13 +11787,6 @@ typography-normalize@^0.16.19:
   resolved "https://registry.yarnpkg.com/typography-normalize/-/typography-normalize-0.16.19.tgz#58e0cf12466870c5b27006daa051fe7307780660"
   integrity sha512-vtnSv/uGBZVbd4e/ZhZB9HKBgKKlWQUXw74+ADIHHxzKp27CEf8PSR8TX1zF2qSyQ9/qMdqLwXYz8yRQFq9JLQ==
 
-typography-theme-wordpress-kubrick@^0.16.19:
-  version "0.16.19"
-  resolved "https://registry.yarnpkg.com/typography-theme-wordpress-kubrick/-/typography-theme-wordpress-kubrick-0.16.19.tgz#7acd0cfd9df3aa01f974fc9567c75e4d707a6564"
-  integrity sha512-rzQQ4r7iSDXlpsYqvc2Dq09betunbvtHAVyl1v+nZEJK8crU0hIpJOjb0ZGuixaRmUhpLZiBjz84kEa1/dHOKQ==
-  dependencies:
-    gray-percentage "^2.0.0"
-
 typography@^0.16.19:
   version "0.16.19"
   resolved "https://registry.yarnpkg.com/typography/-/typography-0.16.19.tgz#092bf30a5a47495c955b54f40d3b55a7a9f28e8a"
