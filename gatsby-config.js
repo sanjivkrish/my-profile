@@ -13,7 +13,8 @@ technical abilities offering 3+ years of related experience. Background in devel
         to: 'Aug 2019',
         location: 'Berlin, Germany',
         position: 'Masters in Computer Science',
-        details: 'hello',
+        details: `Cloud Computing Enterprise Computing
+Web Technology Internet of Service`,
         link: 'https://www.tu-berlin.de/menue/home/'
       },
       {
@@ -22,7 +23,7 @@ technical abilities offering 3+ years of related experience. Background in devel
         to: 'Apr 2015',
         location: 'Coimbatore, India',
         position: 'Bachelor in Computer Science and Engineering',
-        details: 'hello',
+        details: `82%`,
         link: 'https://www.kct.ac.in/'
       }
     ],
@@ -33,7 +34,7 @@ technical abilities offering 3+ years of related experience. Background in devel
         to: 'Present',
         location: 'Berlin, Germany',
         position: 'Frontend Developer',
-        details: 'hello',
+        details: `TODO`,
         link: 'https://www.zenjob.de/'
       },
       {
@@ -42,7 +43,10 @@ technical abilities offering 3+ years of related experience. Background in devel
         to: 'July 2019',
         location: 'Berlin, Germany',
         position: 'Frontend Developer (Part-time)',
-        details: 'hello',
+        details: `Working as a part-time student job responsible for front-end development of
+game analysis web application specific to the game DOTA 2 using AngularJS.
+Responsible for front-end development of Product landing sites along with
+payment gateway - Gatsby/React/GraphQL/Webpack/Jest`,
         link: 'https://dojomadness.com/'
       },
       {
@@ -51,7 +55,10 @@ technical abilities offering 3+ years of related experience. Background in devel
         to: 'Jan 2019',
         location: 'Berlin, Germany',
         position: 'Backend Nodejs Developer (Part-time)',
-        details: 'hello',
+        details: `As a part-time role, my responsibility includes RESTful API development and
+database communication - NodeJS/Express/MongoDB/Kibana.
+Implemented and maintained recurring jobs to create, notify and store
+customer status change in the system`,
         link: 'https://de.free2move.com/'
       },
       {
@@ -60,7 +67,12 @@ technical abilities offering 3+ years of related experience. Background in devel
         to: 'Aug 2017',
         location: 'Bangalore, India',
         position: 'Fullstack Developer',
-        details: 'hello',
+        details: `Started as an Intern for the first 5 months. Deployed as an Onsite engineer at
+Texas Instrument for 2 years. Development of web-enabled UI framework for Hardware boards using
+HTML5, CSS3, AngularJS, NodeJS and Node-webkit. Worked from a scratch in both server and client side, learning code management, software life cycle and methodologies in a fast-paced
+environment.
+Implemented Hardware communication add-on using NodeJS.
+Worked with JIRA/Jenkins/Sass/D3Js/Protractor`,
         link: 'https://www.solitontech.com/'
       }
     ]

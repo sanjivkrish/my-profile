@@ -2,6 +2,10 @@ import React from 'react';
 import { styled } from '@material-ui/core/styles';
 import { Grid, Box, Link } from '@material-ui/core';
 
+const Wrapper = styled(Grid)({
+  padding: '1.5rem 0'
+});
+
 const MiniFontBox = styled(Box)({
   fontSize: '0.75rem'
 });
@@ -19,7 +23,7 @@ const TimelineTile = ({
   details,
   link
 }) => (
-  <Grid container spacing={5}>
+  <Wrapper container>
     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
       <Box component="h4">{where}</Box>
       <MiniFontBox>
@@ -28,13 +32,13 @@ const TimelineTile = ({
       <MiniFontBox>{location}</MiniFontBox>
     </Grid>
     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-      <PositionBox>{position}</PositionBox>
-      <Box>{details}</Box>
+      <PositionBox component="h5">{position}</PositionBox>
+      <Box component="p">{details}</Box>
       <Link href={link} target="_blank">
         {link}
       </Link>
     </Grid>
-  </Grid>
+  </Wrapper>
 );
 
 export default TimelineTile;

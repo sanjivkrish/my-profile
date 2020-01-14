@@ -14,16 +14,14 @@ const BgContainer = styled(BackgroundImage)({
 const InfoContainer = styled(Container)({
   position: 'relative',
   top: '5%',
-  width: '50%',
   textAlign: 'center'
 });
 
 const Title = styled(Box)({
-  fontSize: '3rem',
+  fontSize: '2rem',
   fontWeight: '700',
   color: 'white',
   textAlign: 'center',
-  borderBottom: '1px solid white',
   paddingBottom: '1rem'
 });
 
@@ -54,7 +52,7 @@ const Intro = () => {
 
   return (
     <BgContainer fluid={bgImage.childImageSharp.fluid}>
-      <InfoContainer>
+      <InfoContainer fixed>
         <Title component="h1">{site.siteMetadata.fullName}</Title>
         <SubTitle component="p">{site.siteMetadata.profession}</SubTitle>
       </InfoContainer>
