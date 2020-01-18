@@ -53,7 +53,7 @@ const Profile = () => {
       <SectionTitle component="h2">Profile</SectionTitle>
       <Box component="hr" />
       <Grid container direction="row" justify="space-between" spacing={5}>
-        <Grid item xs={12} sm={3}>
+        <Grid item xs={12} sm={12} m={3}>
           <Box component="h3">Details</Box>
           <SectionSubContent component="div">
             <Box component="b">Full Name:</Box>
@@ -64,10 +64,10 @@ const Profile = () => {
             <Box>{site.siteMetadata.currentLocation}</Box>
           </SectionSubContent>
         </Grid>
-        <Grid item xs={12} sm={3}>
+        <Grid item xs={12} sm={12} m={3}>
           <DisplayPicture fluid={displayPic.childImageSharp.fluid} />
         </Grid>
-        <Grid item xs={12} sm={3}>
+        <Grid item xs={12} sm={12} m={3}>
           <Box component="h3">About</Box>
           <SectionSubContent component="p">
             {site.siteMetadata.about}

@@ -75,6 +75,80 @@ Implemented Hardware communication add-on using NodeJS.
 Worked with JIRA/Jenkins/Sass/D3Js/Protractor`,
         link: 'https://www.solitontech.com/'
       }
+    ],
+    skills: [
+      {
+        name: 'Javascript',
+        stars: 5
+      },
+      {
+        name: 'HTML5 / CSS3',
+        stars: 5
+      },
+      {
+        name: 'Python',
+        stars: 5
+      },
+      {
+        name: 'React',
+        stars: 5
+      },
+      {
+        name: 'Angular',
+        stars: 5
+      },
+      {
+        name: 'NodeJS',
+        stars: 5
+      },
+      {
+        name: 'GraphQL',
+        stars: 5
+      },
+      {
+        name: 'Typescript',
+        stars: 5
+      },
+      {
+        name: 'ExpressJS',
+        stars: 5
+      },
+      {
+        name: 'MongoDB',
+        stars: 5
+      },
+      {
+        name: 'MySQL',
+        stars: 5
+      },
+      {
+        name: 'Jest',
+        stars: 5
+      },
+      {
+        name: 'Mocha',
+        stars: 5
+      },
+      {
+        name: 'Git',
+        stars: 5
+      },
+      {
+        name: 'Webpack',
+        stars: 5
+      },
+      {
+        name: 'Netlify / Heroku',
+        stars: 5
+      },
+      {
+        name: 'JIRA / Asana',
+        stars: 5
+      },
+      {
+        name: 'D3 / ChartJS',
+        stars: 5
+      }
     ]
   },
   plugins: [
