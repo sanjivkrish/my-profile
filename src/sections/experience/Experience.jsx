@@ -4,6 +4,8 @@ import { Box, Grid, Container } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
 import TimeLineTile from './TimelineTile';
 
+import { Wrapper } from '../style';
+
 const SectionTitle = styled(Box)({
   fontSize: '2.5rem',
   textAlign: 'center',
@@ -42,7 +44,7 @@ const Experience = () => {
   );
 
   return (
-    <Container fixed>
+    <Wrapper>
       <SectionTitle component="h2">Experience</SectionTitle>
       <Box component="hr" />
       <Box component="h3">Education</Box>
@@ -65,7 +67,7 @@ const Experience = () => {
           ))}
         </Grid>
       </Grid>
-    </Container>
+    </Wrapper>
   );
 };
 

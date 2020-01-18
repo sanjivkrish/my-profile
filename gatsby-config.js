@@ -149,7 +149,12 @@ Worked with JIRA/Jenkins/Sass/D3Js/Protractor`,
         name: 'D3 / ChartJS',
         stars: 3
       }
-    ]
+    ],
+    contact: {
+      mail: 'sanjiv436.k@gmail.com',
+      github: 'https://github.com/sanjivkrish',
+      linkedin: 'www.linkedin.com/in/sanjivkrishnasamy'
+    }
   },
   plugins: [
     `gatsby-theme-material-ui`,

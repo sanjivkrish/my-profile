@@ -5,6 +5,7 @@ import Intro from '../sections/intro';
 import Profile from '../sections/profile';
 import Experience from '../sections/experience';
 import Skills from '../sections/skills';
+import Contact from '../sections/contact';
 
 import './layout.css';
 
@@ -15,6 +16,7 @@ const IndexPage = () => (
     <Profile />
     <Experience />
     <Skills />
+    <Contact />
   </div>
 );
 

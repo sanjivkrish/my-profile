@@ -1,9 +1,10 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Box, Grid, Container } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
 
 import SkillRating from './SkillRating';
+import { Wrapper } from '../style';
 
 const SectionTitle = styled(Box)({
   fontSize: '2.5rem',
@@ -29,7 +30,7 @@ const Skills = () => {
   );
 
   return (
-    <Container fixed>
+    <Wrapper>
       <SectionTitle component="h2">Skills</SectionTitle>
       <Box component="hr" />
       <Grid container justify="center">
@@ -43,7 +44,7 @@ const Skills = () => {
           </Grid>
         ))}
       </Grid>
-    </Container>
+    </Wrapper>
   );
 };
 

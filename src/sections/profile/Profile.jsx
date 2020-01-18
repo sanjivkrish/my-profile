@@ -5,6 +5,8 @@ import { styled } from '@material-ui/core/styles';
 import Img from 'gatsby-image';
 import moment from 'moment';
 
+import { Wrapper } from '../style';
+
 const SectionTitle = styled(Box)({
   fontSize: '2.5rem',
   textAlign: 'center',
@@ -49,7 +51,7 @@ const Profile = () => {
   );
 
   return (
-    <Container fixed>
+    <Wrapper>
       <SectionTitle component="h2">Profile</SectionTitle>
       <Box component="hr" />
       <Grid container direction="row" justify="space-between" spacing={5}>
@@ -74,7 +76,7 @@ const Profile = () => {
           </SectionSubContent>
         </Grid>
       </Grid>
-    </Container>
+    </Wrapper>
   );
 };
 
