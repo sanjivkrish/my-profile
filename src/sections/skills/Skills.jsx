@@ -3,6 +3,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Box, Grid, Container } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
 
+import SkillRating from './SkillRating';
+
 const SectionTitle = styled(Box)({
   fontSize: '2.5rem',
   textAlign: 'center',
@@ -32,8 +34,12 @@ const Skills = () => {
       <Box component="hr" />
       <Grid container justify="center">
         {site.siteMetadata.skills.map(skill => (
-          <Grid item key={skill.name} xs={12} sm={6} md={6} lg={6} xl={3}>
-            {skill.name}
+          <Grid item key={skill.name} xs={12} sm={12} md={6} lg={6}>
+            <SkillRating
+              key={skill.name}
+              name={skill.name}
+              stars={skill.stars}
+            />
           </Grid>
         ))}
       </Grid>

@@ -87,7 +87,7 @@ Worked with JIRA/Jenkins/Sass/D3Js/Protractor`,
       },
       {
         name: 'Python',
-        stars: 5
+        stars: 4
       },
       {
         name: 'React',
@@ -95,15 +95,15 @@ Worked with JIRA/Jenkins/Sass/D3Js/Protractor`,
       },
       {
         name: 'Angular',
-        stars: 5
+        stars: 4
       },
       {
         name: 'NodeJS',
-        stars: 5
+        stars: 4
       },
       {
         name: 'GraphQL',
-        stars: 5
+        stars: 4
       },
       {
         name: 'Typescript',
@@ -111,7 +111,7 @@ Worked with JIRA/Jenkins/Sass/D3Js/Protractor`,
       },
       {
         name: 'ExpressJS',
-        stars: 5
+        stars: 3
       },
       {
         name: 'MongoDB',
@@ -119,7 +119,7 @@ Worked with JIRA/Jenkins/Sass/D3Js/Protractor`,
       },
       {
         name: 'MySQL',
-        stars: 5
+        stars: 3
       },
       {
         name: 'Jest',
@@ -127,7 +127,7 @@ Worked with JIRA/Jenkins/Sass/D3Js/Protractor`,
       },
       {
         name: 'Mocha',
-        stars: 5
+        stars: 3
       },
       {
         name: 'Git',
@@ -147,7 +147,7 @@ Worked with JIRA/Jenkins/Sass/D3Js/Protractor`,
       },
       {
         name: 'D3 / ChartJS',
-        stars: 5
+        stars: 3
       }
     ]
   },
