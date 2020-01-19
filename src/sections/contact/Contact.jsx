@@ -16,10 +16,6 @@ const LinkWrapper = styled(Grid)({
   textAlign: 'center'
 });
 
-const StyledLink = styled(Box)({
-  color: '#0a0a79'
-});
-
 const Contact = () => {
   const { site } = useStaticQuery(
     graphql`

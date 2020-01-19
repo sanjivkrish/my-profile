@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Grid, Box, Container } from '@material-ui/core';
+import { Grid, Box } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
 import Img from 'gatsby-image';
 import moment from 'moment';

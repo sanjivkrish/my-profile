@@ -34,7 +34,7 @@ Web Technology Internet of Service`,
         to: 'Present',
         location: 'Berlin, Germany',
         position: 'Frontend Developer',
-        details: `TODO`,
+        details: `Working on cutting edge technologies - ReactJS, GraphQL, Typescript`,
         link: 'https://www.zenjob.de/'
       },
       {

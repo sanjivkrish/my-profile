@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Box, Grid, Container } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
 import TimeLineTile from './TimelineTile';
 
@@ -47,25 +47,17 @@ const Experience = () => {
     <Wrapper>
       <SectionTitle component="h2">Experience</SectionTitle>
       <Box component="hr" />
-      <Box component="h3">Education</Box>
       <Grid container direction="column">
+        <Box component="h3">Education</Box>
         {site.siteMetadata.education.map(university => (
           <TimeLineTile key={university.where} {...university} />
         ))}
       </Grid>
-      <Box component="hr" />
-      <Grid item>
-        <Grid
-          container
-          direction="column"
-          justify="center"
-          alignItems="flex-start"
-        >
-          <Box component="h3">Careers</Box>
-          {site.siteMetadata.experience.map(company => (
-            <TimeLineTile key={company.where} {...company} />
-          ))}
-        </Grid>
+      <Grid container direction="column">
+        <Box component="h3">Careers</Box>
+        {site.siteMetadata.experience.map(company => (
+          <TimeLineTile key={company.where} {...company} />
+        ))}
       </Grid>
     </Wrapper>
   );
