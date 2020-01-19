@@ -14,29 +14,27 @@ const SectionTitle = styled(Box)({
 });
 
 const Experience = () => {
-  const { site } = useStaticQuery(
+  const { contentfulWebsiteInfoJsonNode } = useStaticQuery(
     graphql`
       query {
-        site {
-          siteMetadata {
-            education {
-              where
-              from
-              to
-              location
-              position
-              details
-              link
-            }
-            experience {
-              where
-              from
-              to
-              location
-              position
-              details
-              link
-            }
+        contentfulWebsiteInfoJsonNode {
+          education {
+            where
+            from
+            to
+            location
+            position
+            details
+            link
+          }
+          experience {
+            where
+            from
+            to
+            location
+            position
+            details
+            link
           }
         }
       }
@@ -49,13 +47,13 @@ const Experience = () => {
       <Box component="hr" />
       <Grid container direction="column">
         <Box component="h3">Education</Box>
-        {site.siteMetadata.education.map(university => (
+        {contentfulWebsiteInfoJsonNode.education.map(university => (
           <TimeLineTile key={university.where} {...university} />
         ))}
       </Grid>
       <Grid container direction="column">
         <Box component="h3">Careers</Box>
-        {site.siteMetadata.experience.map(company => (
+        {contentfulWebsiteInfoJsonNode.experience.map(company => (
           <TimeLineTile key={company.where} {...company} />
         ))}
       </Grid>

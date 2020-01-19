@@ -32,13 +32,11 @@ const SubTitle = styled(Box)({
 });
 
 const Intro = () => {
-  const { site, bgImage } = useStaticQuery(graphql`
+  const { contentfulWebsiteInfoJsonNode, bgImage } = useStaticQuery(graphql`
     query {
-      site {
-        siteMetadata {
-          fullName
-          profession
-        }
+      contentfulWebsiteInfoJsonNode {
+        fullName
+        profession
       }
       bgImage: file(relativePath: { eq: "batman.jpg" }) {
         childImageSharp {
@@ -53,8 +51,10 @@ const Intro = () => {
   return (
     <BgContainer fluid={bgImage.childImageSharp.fluid}>
       <InfoContainer fixed>
-        <Title component="h1">{site.siteMetadata.fullName}</Title>
-        <SubTitle component="p">{site.siteMetadata.profession}</SubTitle>
+        <Title component="h1">{contentfulWebsiteInfoJsonNode.fullName}</Title>
+        <SubTitle component="p">
+          {contentfulWebsiteInfoJsonNode.profession}
+        </SubTitle>
       </InfoContainer>
     </BgContainer>
   );

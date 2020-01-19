@@ -14,15 +14,13 @@ const SectionTitle = styled(Box)({
 });
 
 const Skills = () => {
-  const { site } = useStaticQuery(
+  const { contentfulWebsiteInfoJsonNode } = useStaticQuery(
     graphql`
       query {
-        site {
-          siteMetadata {
-            skills {
-              name
-              stars
-            }
+        contentfulWebsiteInfoJsonNode {
+          skills {
+            name
+            stars
           }
         }
       }
@@ -34,7 +32,7 @@ const Skills = () => {
       <SectionTitle component="h2">Skills</SectionTitle>
       <Box component="hr" />
       <Grid container justify="center">
-        {site.siteMetadata.skills.map(skill => (
+        {contentfulWebsiteInfoJsonNode.skills.map(skill => (
           <Grid item key={skill.name} xs={12} sm={12} md={6} lg={6}>
             <SkillRating
               key={skill.name}

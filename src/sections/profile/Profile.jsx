@@ -25,16 +25,14 @@ const DisplayPicture = styled(Img)({
 });
 
 const Profile = () => {
-  const { site, displayPic } = useStaticQuery(
+  const { contentfulWebsiteInfoJsonNode, displayPic } = useStaticQuery(
     graphql`
       query {
-        site {
-          siteMetadata {
-            fullName
-            birthDate
-            currentLocation
-            about
-          }
+        contentfulWebsiteInfoJsonNode {
+          fullName
+          birthDate
+          currentLocation
+          about
         }
         displayPic: file(relativePath: { eq: "displayPic.jpg" }) {
           childImageSharp {
@@ -47,7 +45,7 @@ const Profile = () => {
     `
   );
   const duration = moment.duration(
-    moment().diff(moment(site.siteMetadata.birthDate))
+    moment().diff(moment(contentfulWebsiteInfoJsonNode.birthDate))
   );
 
   return (
@@ -59,11 +57,11 @@ const Profile = () => {
           <Box component="h3">Details</Box>
           <SectionSubContent component="div">
             <Box component="b">Full Name:</Box>
-            <Box>{site.siteMetadata.fullName}</Box>
+            <Box>{contentfulWebsiteInfoJsonNode.fullName}</Box>
             <Box component="b">Age:</Box>
             <Box>{Math.floor(duration.asYears())} earth years</Box>
             <Box component="b">Current Location:</Box>
-            <Box>{site.siteMetadata.currentLocation}</Box>
+            <Box>{contentfulWebsiteInfoJsonNode.currentLocation}</Box>
           </SectionSubContent>
         </Grid>
         <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>
@@ -72,7 +70,7 @@ const Profile = () => {
         <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>
           <Box component="h3">About</Box>
           <SectionSubContent component="p">
-            {site.siteMetadata.about}
+            {contentfulWebsiteInfoJsonNode.about}
           </SectionSubContent>
         </Grid>
       </Grid>

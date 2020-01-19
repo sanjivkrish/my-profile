@@ -17,23 +17,21 @@ const LinkWrapper = styled(Grid)({
 });
 
 const Contact = () => {
-  const { site } = useStaticQuery(
+  const { contentfulWebsiteInfoJsonNode } = useStaticQuery(
     graphql`
       query {
-        site {
-          siteMetadata {
-            contact {
-              mail
-              github
-              linkedin
-            }
+        contentfulWebsiteInfoJsonNode {
+          contact {
+            mail
+            github
+            linkedin
           }
         }
       }
     `
   );
 
-  const { mail, github, linkedin } = site.siteMetadata.contact;
+  const { mail, github, linkedin } = contentfulWebsiteInfoJsonNode.contact;
 
   return (
     <Wrapper maxWidth={false}>
