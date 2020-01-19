@@ -9,10 +9,10 @@ const Wrapper = styled(Grid)({
 
 const SkillRating = ({ name, stars }) => (
   <Wrapper container>
-    <Grid item sm={3}>
+    <Grid item xs={6} sm={3}>
       <Typography>{name}</Typography>
     </Grid>
-    <Grid item sm={3}>
+    <Grid item xs={6} sm={3}>
       <Rating value={stars} readOnly />
     </Grid>
   </Wrapper>
