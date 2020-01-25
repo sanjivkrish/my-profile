@@ -17,13 +17,16 @@ const InfoContainer = styled(Container)({
   textAlign: 'center'
 });
 
-const Title = styled(Box)({
+const Title = styled(Box)(({ theme }) => ({
   fontSize: '2rem',
   fontWeight: '700',
   color: 'white',
   textAlign: 'center',
-  paddingBottom: '1rem'
-});
+  paddingBottom: '1rem',
+  [theme.breakpoints.up('md')]: {
+    fontSize: '3rem',
+  }
+}));
 
 const SubTitle = styled(Box)({
   fontSize: '2rem',
@@ -38,7 +41,7 @@ const Intro = () => {
         fullName
         profession
       }
-      bgImage: file(relativePath: { eq: "batman.jpg" }) {
+      bgImage: file(relativePath: { eq: "bgImg.jpg" }) {
         childImageSharp {
           fluid(quality: 90) {
             ...GatsbyImageSharpFluid
@@ -47,7 +50,7 @@ const Intro = () => {
       }
     }
   `);
-
+  
   return (
     <BgContainer fluid={bgImage.childImageSharp.fluid}>
       <InfoContainer fixed>
