@@ -33,6 +33,11 @@ const Profile = () => {
           birthDate
           currentLocation
           about
+          education {
+            where
+            position
+            link
+          }
         }
         displayPic: file(relativePath: { eq: "displayPic.jpg" }) {
           childImageSharp {
@@ -52,8 +57,8 @@ const Profile = () => {
     <Wrapper>
       <SectionTitle component="h2">Profile</SectionTitle>
       <Box component="hr" />
-      <Grid container direction="row" justify="space-between" spacing={5}>
-        <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>
+      <Grid container direction="row" justify="space-between">
+        <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
           <Box component="h3">Details</Box>
           <SectionSubContent component="div">
             <Box component="b">Full Name:</Box>
@@ -62,6 +67,14 @@ const Profile = () => {
             <Box>{Math.floor(duration.asYears())} earth years</Box>
             <Box component="b">Current Location:</Box>
             <Box>{contentfulWebsiteInfoJsonNode.currentLocation}</Box>
+            <Box component="b">Education:</Box>
+            {contentfulWebsiteInfoJsonNode.education.map(
+              ({ where, position }) => (
+                <Box>
+                  - {position}, {where}.
+                </Box>
+              )
+            )}
           </SectionSubContent>
         </Grid>
         <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>

@@ -45,7 +45,6 @@ const Contact = () => {
   );
 
   const { mail, github, linkedin } = contentfulWebsiteInfoJsonNode.contact;
-  console.log(bgVideo);
   return (
     <Wrapper maxWidth={false}>
       <Video height="100%" width="100%" loop muted autoPlay>
