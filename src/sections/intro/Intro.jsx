@@ -8,7 +8,8 @@ const BgContainer = styled(BackgroundImage)({
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
-  height: '100vh'
+  height: '100vh',
+  overflow: 'hidden'
 });
 
 const InfoContainer = styled(Container)({
@@ -24,7 +25,7 @@ const Title = styled(Box)(({ theme }) => ({
   textAlign: 'center',
   paddingBottom: '1rem',
   [theme.breakpoints.up('md')]: {
-    fontSize: '3rem',
+    fontSize: '3rem'
   }
 }));
 
@@ -34,8 +35,21 @@ const SubTitle = styled(Box)({
   textAlign: 'center'
 });
 
+const Video = styled('video')({
+  position: 'absolute',
+  transform: 'translate(-10%)',
+  left: '0',
+  height: 'auto',
+  width: 'auto',
+  zIndex: '-10'
+});
+
 const Intro = () => {
-  const { contentfulWebsiteInfoJsonNode, bgImage } = useStaticQuery(graphql`
+  const {
+    contentfulWebsiteInfoJsonNode,
+    bgVideo,
+    bgImage
+  } = useStaticQuery(graphql`
     query {
       contentfulWebsiteInfoJsonNode {
         fullName
@@ -48,15 +62,25 @@ const Intro = () => {
           }
         }
       }
+      bgVideo: contentfulAsset(title: { eq: "coding" }) {
+        file {
+          url
+        }
+      }
     }
   `);
-  
+
   return (
     <BgContainer fluid={bgImage.childImageSharp.fluid}>
+      <Video height="100%" width="100%" loop muted autoPlay>
+        <source src={bgVideo.file.url} type="video/webm" />
+      </Video>
       <InfoContainer fixed>
         <Title component="h1">{contentfulWebsiteInfoJsonNode.fullName}</Title>
         <SubTitle component="p">
+          {'{ '}
           {contentfulWebsiteInfoJsonNode.profession}
+          {' }'}
         </SubTitle>
       </InfoContainer>
     </BgContainer>

@@ -16,16 +16,8 @@ const LinkWrapper = styled(Grid)({
   textAlign: 'center'
 });
 
-const Video = styled('video')({
-  position: 'absolute',
-  left: '0',
-  height: 'auto',
-  width: 'auto',
-  zIndex: '-10'
-});
-
 const Contact = () => {
-  const { contentfulWebsiteInfoJsonNode, bgVideo } = useStaticQuery(
+  const { contentfulWebsiteInfoJsonNode } = useStaticQuery(
     graphql`
       query {
         contentfulWebsiteInfoJsonNode {
@@ -35,21 +27,13 @@ const Contact = () => {
             linkedin
           }
         }
-        bgVideo: contentfulAsset(title: { eq: "coding" }) {
-          file {
-            url
-          }
-        }
       }
     `
   );
 
   const { mail, github, linkedin } = contentfulWebsiteInfoJsonNode.contact;
   return (
-    <Wrapper maxWidth={false}>
-      <Video height="100%" width="100%" loop muted autoPlay>
-        <source src={bgVideo.file.url} type="video/webm" />
-      </Video>
+    <Wrapper>
       <SectionTitle component="h2">Contact</SectionTitle>
       <Box component="hr" />
       <Grid container>
