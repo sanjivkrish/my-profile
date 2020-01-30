@@ -35,13 +35,25 @@ const SubTitle = styled(Box)({
   textAlign: 'center'
 });
 
+const VideoContainer = styled('div')({
+  position: 'absolute',
+  top: '0',
+  bottom: '0',
+  height: '100%',
+  width: '100%',
+  zIndex: '-10',
+  overflow: 'hidden'
+});
+
 const Video = styled('video')({
   position: 'absolute',
-  transform: 'translate(-10%)',
-  left: '0',
+  transform: 'translate(-50%,-50%)',
+  top: '50%',
+  left: '50%',
   height: 'auto',
   width: 'auto',
-  zIndex: '-10'
+  minWidth: '100%',
+  minHeight: '100%'
 });
 
 const Intro = () => {
@@ -72,9 +84,11 @@ const Intro = () => {
 
   return (
     <BgContainer fluid={bgImage.childImageSharp.fluid}>
-      <Video height="100%" width="100%" loop muted autoPlay>
-        <source src={bgVideo.file.url} type="video/webm" />
-      </Video>
+      <VideoContainer>
+        <Video height="100%" width="100%" loop muted autoPlay>
+          <source src={bgVideo.file.url} type="video/webm" />
+        </Video>
+      </VideoContainer>
       <InfoContainer fixed>
         <Title component="h1">{contentfulWebsiteInfoJsonNode.fullName}</Title>
         <SubTitle component="p">
