@@ -2,6 +2,9 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Link, Grid, Box } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
+import MailIcon from '@material-ui/icons/Mail';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 import { Wrapper } from '../style';
 
@@ -38,16 +41,18 @@ const Contact = () => {
       <Box component="hr" />
       <Grid container>
         <LinkWrapper item xs={12} sm={12} md={4} lg={4}>
-          <Link href={`mailto:${mail}`}>{mail}</Link>
+          <Link href={`mailto:${mail}`}>
+            <MailIcon fontSize="large" style={{ color: 'black' }} />
+          </Link>
         </LinkWrapper>
         <LinkWrapper item xs={12} sm={12} md={4} lg={4}>
           <Link href={github} target="_blank">
-            {github}
+            <GitHubIcon fontSize="large" style={{ color: 'black' }} />
           </Link>
         </LinkWrapper>
         <LinkWrapper item xs={12} sm={12} md={4} lg={4}>
           <Link href={linkedin} target="_blank">
-            {linkedin}
+            <LinkedInIcon fontSize="large" style={{ color: 'black' }} />
           </Link>
         </LinkWrapper>
       </Grid>
