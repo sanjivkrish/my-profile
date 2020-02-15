@@ -39,18 +39,18 @@ const Contact = () => {
     <Wrapper>
       <SectionTitle component="h2">Contact</SectionTitle>
       <Box component="hr" />
-      <Grid container>
-        <LinkWrapper item xs={12} sm={12} md={4} lg={4}>
+      <Grid container justify="center">
+        <LinkWrapper item xs={2}>
           <Link href={`mailto:${mail}`}>
             <MailIcon fontSize="large" style={{ color: 'black' }} />
           </Link>
         </LinkWrapper>
-        <LinkWrapper item xs={12} sm={12} md={4} lg={4}>
+        <LinkWrapper item xs={2}>
           <Link href={github} target="_blank">
             <GitHubIcon fontSize="large" style={{ color: 'black' }} />
           </Link>
         </LinkWrapper>
-        <LinkWrapper item xs={12} sm={12} md={4} lg={4}>
+        <LinkWrapper item xs={2}>
           <Link href={linkedin} target="_blank">
             <LinkedInIcon fontSize="large" style={{ color: 'black' }} />
           </Link>
